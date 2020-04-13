@@ -46,6 +46,10 @@ body {
     border-bottom: 2px solid black;
 }
 
+.taks__title--course {
+    border: 0;
+}
+
 .task {
     display: flex;
     background: rgb(150,193,252);
@@ -72,7 +76,7 @@ body {
     display: flex;
     margin: 5px;
     font-size: 16px;
-    border: 4px solid black;
+    border: 2px solid black;
     flex-grow: 1;
 }
 
