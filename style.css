@@ -12,6 +12,7 @@ body {
     font-family: Ubuntu;
     background-size: contain;
     background-blend-mode: lighten;
+    background-repeat: round;
 }
 
 .task__container {
