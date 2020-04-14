@@ -113,3 +113,32 @@ body {
 .task--progress {
     opacity: 0.6;
 }
+
+@keyframes start {
+    from {
+        transform: translateX(-400px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes taskStart {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.task {
+    animation: taskStart 0.8s linear;
+}
+
+.main-title {
+    animation: start 0.5s linear;
+}
