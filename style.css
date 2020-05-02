@@ -187,12 +187,8 @@ body {
         transform: skew(-1deg, -1deg);
     }
 
-    50% {
-        transform: skew(1deg, 1deg);
-    }
-
     to {
-        transform: skew(-1deg, -1deg);
+        transform: skew(1deg, 1deg);
     }
 }
 
@@ -201,21 +197,19 @@ body {
         transform: skew(1deg, 1deg);
     }
 
-    50% {
-        transform: skew(-1deg, -1deg);
-    }
-
     to {
-        transform: skew(1deg, 1deg);
+        transform: skew(-1deg, -1deg);
     }
 }
 
 .task:hover::before {
-    animation: itemHover2 infinite 5s linear;
+    animation: itemHover2 0.5s ease-in;
+    transform: skew(-1deg, -1deg);
 }
 
 .task:nth-child(2n):hover::before {
-    animation: itemHover infinite 5s ease-in;
+    animation: itemHover 0.5s ease-in;
+    transform: skew(1deg, 1deg);
 }
 
 
