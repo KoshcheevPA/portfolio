@@ -184,38 +184,42 @@ body {
 
 @keyframes itemHover {
     from {
-        transform: skew(-1deg, -1deg);
+        transform: skew(-2deg, -2deg);
     }
 
     50% {
-        transform: skew(1deg, 1deg);
+        transform: skew(2deg, 2deg);
     }
 
     to {
-        transform: skew(-1deg, -1deg);
+        transform: skew(-2deg, -2deg);
     }
 }
 
 @keyframes itemHover2 {
     from {
-        transform: skew(1deg, 1deg);
+        transform: skew(2deg, 2deg);
     }
 
     50% {
-        transform: skew(-1deg, -1deg);
+        transform: skew(-2deg, -2deg);
     }
 
     to {
-        transform: skew(1deg, 1deg);
+        transform: skew(2deg, 2deg);
     }
 }
 
-.task:hover::before {
-    animation: itemHover2 1s ease-in;
+.task::before {
+    animation: itemHover2 20s infinite ease-in;
 }
 
-.task:nth-child(2n):hover::before {
-    animation: itemHover 1s ease-in;
+.task:nth-child(2n)::before {
+    animation: itemHover 20s infinite ease-in;
+}
+
+.task:hover::before {
+    filter: blur(5px);
 }
 
 
