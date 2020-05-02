@@ -93,6 +93,21 @@ body {
     background: rgb(189,0,0);
     background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
 }
+
+.task::before {
+    content: '';
+    position: absolute;
+    filter: blur(1px);
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+    z-index: -1;
+	background: #fff;
+    transform: skew(1deg, 1deg);
+    background: rgb(189,0,0);
+    background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
+}
  
 .task:nth-child(2n)::before {
 	transform: skew(-1deg, -1deg);
@@ -166,19 +181,43 @@ body {
     }
 }
 
-@keyframes taskStart {
+
+@keyframes itemHover {
     from {
-        opacity: 0
+        transform: skew(-1deg, -1deg);
+    }
+
+    50% {
+        transform: skew(1deg, 1deg);
     }
 
     to {
-        opacity: 1;
+        transform: skew(-1deg, -1deg);
     }
 }
 
-.task {
-    animation: taskStart 0.8s linear;
+@keyframes itemHover2 {
+    from {
+        transform: skew(1deg, 1deg);
+    }
+
+    50% {
+        transform: skew(-1deg, -1deg);
+    }
+
+    to {
+        transform: skew(1deg, 1deg);
+    }
 }
+
+.task:hover::before {
+    animation: itemHover2 infinite 5s linear;
+}
+
+.task:nth-child(2n):hover::before {
+    animation: itemHover infinite 5s ease-in;
+}
+
 
 .main-title {
     animation: start 0.5s linear;
