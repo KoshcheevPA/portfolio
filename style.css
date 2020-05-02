@@ -7,8 +7,8 @@ ul {
 body {
     padding: 0;
     margin: 0;
-    background-color: rgba(20,20,20, 0.9);
-    background-image: url('back.jpg');
+    background-color: rgb(30,30,30);
+    /* background-image: url('back.jpg'); */
     font-family: Ubuntu;
     background-size: contain;
     background-blend-mode: lighten;
@@ -26,16 +26,15 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: relative;
     margin: 0;
     padding: 5px;
     font-size: 26px;
     font-weight: 300;
-    color: black;
-    background: rgb(150,193,252);
+    color: rgb(170,170,170);
+    /* background: rgba(0,193,167,1); */
     align-items: end;
     width: max-content;
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
 }
 
 .taks__title {
@@ -43,11 +42,11 @@ body {
     text-align: center;
     flex-direction: column;
     width: 100%;
-    color: black;
+    color: rgb(170,170,170);
+    background-color: rgb(40,40,40); 
     font-size: 22px;
     margin: 0 auto;
-    padding: 15px 0;
-    border-bottom: 2px solid black;
+    padding: 20px 0;
 }
 
 .taks__title--course {
@@ -56,51 +55,89 @@ body {
 
 .task {
     display: flex;
-    background: rgb(150,193,252);
+    position: relative;
+    background-color: rgba(30,30,30);
     margin: 25px;
+    color: rgb(170,170,170);
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
-    padding: 10px 15px;
     min-width: 300px;
     max-width: 520px;
-    box-shadow: inset 0 0 8px black,
-                0 0 0 2px black,
-                0 0 0 6px rgb(150,193,252);
 }
+
+.main-title::before {
+    content: '';
+    position: absolute;
+    filter: blur(20px);
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+    z-index: -1;
+	background: #fff;
+    background: rgb(189,0,0);
+    background: linear-gradient(135deg, rgba(189,0,0,0.4) 0%, transparent 50%, rgba(0,193,167,0.4) 100%);
+}
+
+.task::before {
+    content: '';
+    position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+    z-index: -1;
+	background: #fff;
+    transform: skew(2deg, 2deg);
+    background: rgb(189,0,0);
+    background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
+}
+ 
+.task:nth-child(2n)::before {
+	transform: skew(-2deg, -2deg);
+    background: rgb(189,0,0);
+    background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
+} 
 
 .task-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .task__item {
     display: flex;
     margin: 5px;
     font-size: 16px;
-    border: 2px solid black;
+    border: 2px solid rgb(170,170,170);
     flex-grow: 1;
 }
 
 .task__item:hover {
-    background: rgb(150,193,252);
-    background: linear-gradient(180deg, rgba(150,193,252,0.8) 0%, rgba(206,228,255,0.6474789744999563) 100%);
+    background: rgb(189,0,0);
+    background: linear-gradient(135deg, rgba(189,0,0,0.4) 0%, transparent 30%, transparent 70%, rgba(0,193,167,0.4) 100%);
+}
+
+.task:nth-child(2n) .task__item:hover {
+    background: rgb(189,0,0);
+    background: linear-gradient(-135deg, rgba(0,193,167,0.4) 0%, transparent 30%, transparent 70%, rgba(189,0,0,0.4) 100%);
 }
 
 .task__item a {
     display: flex;
     width: 100%;
     padding: 15px;
-    color: black;
+    color: rgb(170,170,170);
     text-decoration: none;
     flex-direction: column;
     text-align: center;
 }
 
 .task__description {
-    padding: 0;
+    padding: 5px 10px;
     margin: 10px 5px;
 }
 
@@ -112,6 +149,11 @@ body {
 
 .task--progress {
     opacity: 0.6;
+}
+
+.task--progress::before,
+.task--progress::after {
+    display: none;
 }
 
 @keyframes start {
@@ -133,7 +175,6 @@ body {
         opacity: 1;
     }
 }
-
 
 .task {
     animation: taskStart 0.8s linear;
