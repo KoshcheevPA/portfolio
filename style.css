@@ -89,13 +89,13 @@ body {
 	bottom: -2px;
     z-index: -1;
 	background: #fff;
-    transform: skew(2deg, 2deg);
+    transform: skew(1deg, 1deg);
     background: rgb(189,0,0);
     background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
 }
  
 .task:nth-child(2n)::before {
-	transform: skew(-2deg, -2deg);
+	transform: skew(-1deg, -1deg);
     background: rgb(189,0,0);
     background: linear-gradient(to right, rgba(189,0,0,1) 0%, rgba(0,193,167,1) 100%);
 } 
