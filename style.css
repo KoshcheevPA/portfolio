@@ -187,13 +187,7 @@ body {
         transform: skew(-1deg, -1deg);
     }
 
-    to {
-        transform: skew(1deg, 1deg);
-    }
-}
-
-@keyframes itemHover2 {
-    from {
+    50% {
         transform: skew(1deg, 1deg);
     }
 
@@ -202,14 +196,26 @@ body {
     }
 }
 
+@keyframes itemHover2 {
+    from {
+        transform: skew(1deg, 1deg);
+    }
+
+    50% {
+        transform: skew(-1deg, -1deg);
+    }
+
+    to {
+        transform: skew(1deg, 1deg);
+    }
+}
+
 .task:hover::before {
-    animation: itemHover2 0.5s ease-in;
-    transform: skew(-1deg, -1deg);
+    animation: itemHover2 1s ease-in;
 }
 
 .task:nth-child(2n):hover::before {
-    animation: itemHover 0.5s ease-in;
-    transform: skew(1deg, 1deg);
+    animation: itemHover 1s ease-in;
 }
 
 
