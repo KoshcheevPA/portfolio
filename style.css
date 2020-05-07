@@ -75,15 +75,17 @@ a::selection {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    align-content: flex-end;
-    /* position: absolute; */
     padding: 20px;
 }
 
 .social__item {
-    /* position: absolute; */
+    font-size: 18px;
     padding: 10px;
     margin: 5px;
+}
+
+.social__item a{
+    text-decoration: none;
 }
 
 
