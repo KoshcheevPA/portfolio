@@ -85,6 +85,7 @@ a::selection {
 }
 
 .social__item a{
+    color: white;
     text-decoration: none;
 }
 
